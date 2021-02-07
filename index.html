@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Hungry-Monster</title>
-    
+
 </head>
+
 <body>
+    <!--search-area-->
+    <div>
+        <form class="col-md-6 m-auto py-5">
+            <div id="input-meal" class="mb-3">
+                <div class="input-group mb-3">
+                    <input id="mealName" type="text" class="form-control" placeholder="Search fot Meal">
+                    <button class="btn btn-danger" type="button" id="search-btn">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--End search area-->
+    
+    <!--Meal-Items-->
+    <section id="container">
+        <div id="foodDetails"></div>
+        <div id="food-list"></div>
+    </section>
+
+    <!--Ingredients-->
+    <section id="mealDetails"></section>
+
     <script src="index.js"></script>
 </body>
+
 </html>
