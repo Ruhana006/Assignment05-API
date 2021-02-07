@@ -23,6 +23,16 @@ const getMeal = mealName => {
         });
     }
 }
+
+const container = document.getElementById("food-list");
+container.value = '';
+const searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener('click', () => {
+    const mealName = document.getElementById('mealName').value;
+    container.innerHTML='';
+    getMeal(mealName)
+})
+
 const displayMealDetails = name => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${name}`;
     fetch(url)
@@ -32,30 +42,23 @@ const displayMealDetails = name => {
             console.log(data.meals[0]);
         })
 }
+
 const renderMealInfo = meal => {
     const mealDetails = document.getElementById('mealDetails');
     mealDetails.innerHTML = `
-    <div>
-    <img class="img-fluid src="${meal.strMeal.Thumb}">
-    <h4 id="item-name">${meal.strMeal}</h4>
-    <ul  list-style-type:circle>
-        <li>${meal.strMeasure1},${meal.strIngredient1}</li>
-        <li>${meal.strMeasure2},${meal.strIngredient2}</li>
-        <li>${meal.strMeasur31},${meal.strIngredient3}</li>
-        <li>${meal.strMeasure4},${meal.strIngredient4}</li>
-        <li>${meal.strMeasure5},${meal.strIngredient5}</li>
-        <li>${meal.strMeasure6},${meal.strIngredient6}</li>
-        <li>${meal.strMeasure7},${meal.strIngredient7}</li>
-    </ul>
+    <div class="ingredients">
+        <img class="img-fluid src="${meal.strMeal.Thumb}">
+        <h2 id="item-name">${meal.strMeal}</h2>
+        <h5>Ingredients</h5>
+        <ul  list-style-type:circle>
+            <li>${meal.strMeasure1},${meal.strIngredient1}</li>
+            <li>${meal.strMeasure2},${meal.strIngredient2}</li>
+            <li>${meal.strMeasur31},${meal.strIngredient3}</li>
+            <li>${meal.strMeasure4},${meal.strIngredient4}</li>
+            <li>${meal.strMeasure5},${meal.strIngredient5}</li>
+            <li>${meal.strMeasure6},${meal.strIngredient6}</li>
+            <li>${meal.strMeasure7},${meal.strIngredient7}</li>
+        </ul>
     </div>
     `;
-
 }
-const container = document.getElementById("food-list");
-container.value = '';
-const searchBtn = document.getElementById('search-btn');
-searchBtn.addEventListener('click', () => {
-    const mealName = document.getElementById('mealName').value;
-    container.innerHTML='';
-    getMeal(mealName)
-})

@@ -1,12 +1,13 @@
 #food-list{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap:10px
+    grid-gap:20px
 }
 .food{
-    border: 2px solid gray;
-    border-radius: 10px;
-    padding: 20px 10px;
+    border: 2px solid gainsboro;
+    background-color: gainsboro;
+    border-radius: 5px;
+    padding: 5px;
     text-align: center;
     width: 400px;
     margin: auto;   
@@ -17,6 +18,11 @@
 }
 #item-name{
     color:black;
-    font-weight: 700;
-    
+    font-weight: 700;   
+}
+.ingredients{
+    text-align: justify;
+    margin-left: 60px;
+    width: 400px;
+    margin-bottom: 40px;
 }
