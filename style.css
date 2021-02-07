@@ -2,21 +2,18 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap:10px
-
 }
-
 .food{
-
-    border: 1px solid black;
+    border: 2px solid gray;
     border-radius: 10px;
     padding: 20px 10px;
     text-align: center;
     width: 400px;
-    margin: auto;
-    
+    margin: auto;   
 }
 .food-name{
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 700;
 }
 #item-name{
     color:black;

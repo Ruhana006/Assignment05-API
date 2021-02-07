@@ -4,8 +4,9 @@ const getMeal = mealName => {
         .then(res => res.json())
         .then(data => {
             displayMeals(data.meals);
-        });
-
+        })
+        .catch(error=>console.log(error));
+        
     const displayMeals = meals => {
         const mealsDiv = document.getElementById('food-list');
         meals.forEach(meal => {
@@ -55,8 +56,6 @@ container.value = '';
 const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', () => {
     const mealName = document.getElementById('mealName').value;
-    container.innerHTML = '';
+    container.innerHTML='';
     getMeal(mealName)
 })
-
-
